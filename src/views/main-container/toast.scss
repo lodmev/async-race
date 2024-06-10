@@ -1,0 +1,35 @@
+.toast {
+  position: fixed;
+  width: calc(100% - 10px);
+  text-align: center;
+  top: 50%;
+  font-size: 1.5rem;
+  color: yellow;
+  opacity: 0;
+
+  &.error {
+    color: var(--err-font-color);
+    &::before {
+      content: 'Error: ';
+    }
+  }
+
+  @keyframes showing {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
+  &.visible {
+    animation: showing 4s linear infinite;
+  }
+}

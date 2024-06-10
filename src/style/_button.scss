@@ -1,0 +1,19 @@
+button,
+.button {
+  cursor: pointer;
+  border: none;
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+button:active,
+.button:active {
+  box-shadow: 0 0 1px 1px grey;
+  translate: 2px;
+}
+
+button:disabled,
+.button:disabled {
+  pointer-events: none;
+  color: rgb(132, 134, 136);
+}

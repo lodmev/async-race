@@ -1,0 +1,17 @@
+.car-form {
+  display: flex;
+  gap: 5px;
+
+  &__text-field,
+  &__color-field {
+    border: none;
+    border-radius: 5px;
+  }
+  &__text-field {
+    padding: 3px;
+  }
+
+  &__submit-field {
+    min-width: 4rem;
+  }
+}

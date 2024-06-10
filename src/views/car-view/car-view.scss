@@ -1,0 +1,74 @@
+$car-width: 5rem;
+.car-block {
+  position: relative;
+  display: flex;
+  align-items: end;
+  width: 100%;
+  border-bottom: rgb(255, 195, 28) dashed 2px;
+  margin-top: 1rem;
+
+  .finish-flag {
+    width: 2rem;
+    position: absolute;
+    right: $car-width;
+    margin-right: 1rem;
+  }
+
+  .move-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-right: 0.5rem;
+  }
+}
+.move-button {
+  color: rgb(8, 177, 8);
+  box-shadow: 0 0 1px 1px rgb(8, 177, 8);
+  grid-area: GO;
+}
+.stop-button {
+  color: rgb(240, 13, 13);
+  box-shadow: 0 0 1px 1px rgb(240, 13, 13);
+  grid-area: STOP;
+}
+.select-button {
+  grid-area: SELECT;
+}
+.remove-button {
+  grid-area: REMOVE;
+}
+.car-container {
+  padding-bottom: 4px;
+  display: grid;
+  row-gap: 0.3rem;
+  column-gap: 0.7rem;
+  grid-template-areas:
+    'GO SELECT REMOVE NAME'
+    'STOP CAR CAR CAR';
+}
+.car {
+  display: flex;
+  position: relative;
+  width: $car-width;
+  fill: #00f;
+  stroke: #eee;
+  grid-area: CAR;
+  margin-bottom: -4px;
+
+  &.broken::after {
+    position: absolute;
+    content: 'x';
+    font-size: 1.5rem;
+    color: var(--err-font-color);
+    right: 11px;
+    top: -17px;
+  }
+
+  g#body {
+    fill: inherit;
+    stroke: inherit;
+  }
+  .car-name {
+    color: #d2d2d2;
+  }
+}

@@ -1,0 +1,38 @@
+@mixin grid-template {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1.5fr;
+}
+@mixin sorting-arrows {
+  color: yellow;
+  position: relative;
+  left: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.winners-table {
+  margin: 1rem auto;
+  margin-left: 1rem;
+  @include grid-template();
+  max-width: 45rem;
+  & div {
+    padding: 0.3rem;
+  }
+  .table-header {
+    background: rgb(35, 107, 241);
+  }
+  .car {
+    width: 2rem;
+  }
+}
+.sorting-controls {
+  cursor: pointer;
+
+  &.asc::after {
+    content: '\2191';
+    @include sorting-arrows();
+  }
+  &.desc::after {
+    content: '\2193';
+    @include sorting-arrows();
+  }
+}

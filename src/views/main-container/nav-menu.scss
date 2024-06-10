@@ -1,0 +1,13 @@
+$active-link-font-color: rgb(2, 114, 189);
+.nav {
+  display: flex;
+  gap: 1rem;
+
+  .menu-item {
+    cursor: pointer;
+  }
+  .active {
+    color: $active-link-font-color;
+    cursor: auto;
+  }
+}
